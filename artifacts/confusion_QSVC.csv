@@ -1,0 +1,8 @@
+,Benign,BruteForce,DDoS,DoS,Recon,Spoofing,Web
+Benign,137,6,16,9,8,5,19
+BruteForce,1,166,16,0,1,10,6
+DDoS,4,18,176,0,1,1,0
+DoS,6,0,0,167,0,25,2
+Recon,4,3,0,0,165,16,12
+Spoofing,1,1,1,12,3,179,3
+Web,8,2,0,2,14,9,165
