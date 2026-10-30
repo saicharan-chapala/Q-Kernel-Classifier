@@ -1,0 +1,48 @@
+{
+  "noise_model_version": "QFF2026-v2",
+  "noise_parameters": {
+    "single_qubit_depolarizing": 0.01,
+    "two_qubit_depolarizing": 0.05,
+    "readout_bitflip": 0.02
+  },
+  "feature_map": "6-qubit ZZ map, scale 1.25; U(x)\u2020U(y) all-zero probability; kernel diagonal set to its known exact value 1",
+  "shots_per_overlap": 2048,
+  "cohort": {
+    "training_rows": 20,
+    "validation_rows": 20,
+    "train_class_counts": {
+      "A": 10,
+      "B": 10
+    },
+    "validation_class_counts": {
+      "A": 10,
+      "B": 10
+    }
+  },
+  "circuit_cost": {
+    "training_unique_off_diagonal_pairs": 190,
+    "diagonal_entries_fixed_to_one_without_circuit": 20,
+    "validation_to_train_pairs": 400,
+    "total_noisy_circuit_evaluations": 590,
+    "shots_total": 1208320,
+    "transpiled_two_qubit_gate_count_total": 35400,
+    "transpiled_depth_min": 50,
+    "transpiled_depth_median": 50.0,
+    "transpiled_depth_max": 50
+  },
+  "matrix_effect": {
+    "training_mean_abs_entry_change": 0.042472302107243204,
+    "training_relative_frobenius_change": 0.25897301149674035,
+    "validation_cross_mean_abs_entry_change": 0.03475773585690955,
+    "noisy_training_kernel_min": 0.01025390625,
+    "noisy_training_kernel_max": 1.0,
+    "noisy_training_kernel_min_eigenvalue": 0.9433500042362354
+  },
+  "downstream": {
+    "ideal_subset_validation_balanced_accuracy": 0.55,
+    "noisy_subset_validation_balanced_accuracy_same_threshold": 0.5,
+    "ideal_validation_threshold": -0.06728933809418292,
+    "ridge_lambda": 0.001,
+    "note": "Small, balanced diagnostic cohort to keep hardware-equivalent noisy circuit cost manageable; compare on identical 20/20 rows. The known kernel diagonal is fixed to one without running a noisy identity circuit. This is a single split, not a hidden-test result."
+  }
+}

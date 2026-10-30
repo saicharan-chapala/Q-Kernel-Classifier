@@ -1,0 +1,53 @@
+{
+  "processor_id": "q2_linear_processor_v1",
+  "n_qubits": 4,
+  "coupling_map": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      2
+    ]
+  ],
+  "native_gate_set": [
+    "rx",
+    "ry",
+    "rz",
+    "cx"
+  ],
+  "qubit_layout": "linear",
+  "noise_assumptions": {
+    "single_qubit_error_rate": 0.01,
+    "two_qubit_error_rate": 0.05,
+    "readout_error_rate": 0.02,
+    "notes": "Uses the organizer benchmark noise rates as design assumptions. The official benchmark applies its own unchanged noise model."
+  },
+  "design_rationale": "A four-qubit linear processor matches the four-qubit ZZFeatureMap used by the Q2 quantum-kernel classifier. Bidirectional nearest-neighbor connections support the linear entanglement pattern and reduce the need to reverse directed two-qubit operations. The native rx, ry, rz, and cx gates are compatible with the organizer's noisy-run basis. Task B's three-qubit QFT provides a separate test of routing overhead, circuit depth, and fidelity on this processor design.",
+  "benchmark_results": {
+    "qft3_circuit_depth_before_transpile": 6,
+    "qft3_circuit_depth_after_transpile": 22,
+    "qft3_two_qubit_gate_count": 12,
+    "qft3_swap_overhead": 1,
+    "qft3_fidelity_ideal": 1.0,
+    "qft3_fidelity_noisy": 0.603585,
+    "benchmark_noise_model_version": "QFF2026-v2"
+  }
+}
